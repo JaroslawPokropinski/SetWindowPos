@@ -13,9 +13,16 @@ const { SetWindowPos } = require('win-setwindowpos');
 let window;
 
 function createConfigWindow() {
-  window = new BrowserWindow({});
+  window = new BrowserWindow({
+  // ...
+  });
+  // ...
   const nativeHandle = window.getNativeWindowHandle();
   const hwnd = nativeHandle.readBigUInt64LE();
+  /*
+    1n = HWND_BOTTOM
+    0x0013 = SWP_NOACTIVATE | SWP_NOSIZE | SWP_NOMOVE
+  */
   SetWindowPos(hwnd, 1n, 0, 0, 0, 0, 0x0013);
 }
 
