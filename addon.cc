@@ -1,7 +1,7 @@
-#include <node.h>
 #include <windows.h>
+#include <node.h>
 
-namespace demo
+namespace setWindowPos
 {
 
     using v8::Exception;
@@ -13,6 +13,7 @@ namespace demo
     using v8::Object;
     using v8::String;
     using v8::Value;
+    using v8::BigInt;
 
     void Method(const FunctionCallbackInfo<Value> &args)
     {
@@ -27,7 +28,7 @@ namespace demo
                     .ToLocalChecked()));
             return;
         }
-        if (!args[0]->IsNumber() || !args[1]->IsNumber() || !args[2]->IsNumber() || !args[3]->IsNumber() || !args[4]->IsNumber() || !args[5]->IsNumber() || !args[6]->IsNumber())
+        if (!args[0]->IsBigInt() || !args[1]->IsBigInt() || !args[2]->IsNumber() || !args[3]->IsNumber() || !args[4]->IsNumber() || !args[5]->IsNumber() || !args[6]->IsNumber())
         {
             isolate->ThrowException(Exception::TypeError(
                 String::NewFromUtf8(isolate,
@@ -37,7 +38,7 @@ namespace demo
             return;
         }
 
-        SetWindowPos((HWND)(int)args[0].As<Number>()->Value(), (HWND)(int)args[1].As<Number>()->Value(), (int)args[2].As<Number>()->Value(),
+        SetWindowPos((HWND)args[0].As<BigInt>()->Uint64Value(), (HWND)args[1].As<BigInt>()->Uint64Value(), (int)args[2].As<Number>()->Value(),
                      (int)args[3].As<Number>()->Value(), (int)args[4].As<Number>()->Value(), (int)args[5].As<Number>()->Value(),
                      (UINT)args[6].As<Number>()->Value());
     }
@@ -49,4 +50,4 @@ namespace demo
 
     NODE_MODULE(NODE_GYP_MODULE_NAME, Initialize)
 
-} // namespace demo
+} // namespace setWindowPos
