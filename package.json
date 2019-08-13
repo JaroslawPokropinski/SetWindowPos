@@ -1,0 +1,21 @@
+{
+  "name": "win-setwindowpos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/testmodule.js",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaroslawPokropinski/SetWindowPos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/JaroslawPokropinski/SetWindowPos/issues"
+  },
+  "homepage": "https://github.com/JaroslawPokropinski/SetWindowPos#readme"
+}
