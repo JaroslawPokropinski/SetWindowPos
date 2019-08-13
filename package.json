@@ -1,10 +1,10 @@
 {
   "name": "win-setwindowpos",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JaroslawPokropinski <jarek.pokropinski@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "test": "node test-directory/test.js",
+    "test": "node test/testModule.js",
     "install": "node-gyp rebuild"
   },
   "repository": {
