@@ -1,6 +1,6 @@
 {
   "name": "win-setwindowpos",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "JaroslawPokropinski <jarek.pokropinski@gmail.com>",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,9 @@
     "url": "https://github.com/JaroslawPokropinski/SetWindowPos/issues"
   },
   "homepage": "https://github.com/JaroslawPokropinski/SetWindowPos#readme",
-  "keywords": ["windows", "winapi"]
+  "keywords": [
+    "windows",
+    "winapi",
+    "SetWindowPos"
+  ]
 }
