@@ -2,6 +2,9 @@
 [![Build Status](https://travis-ci.org/JaroslawPokropinski/SetWindowPos.svg?branch=master)](https://travis-ci.org/JaroslawPokropinski/SetWindowPos)
 
 Node package wrapping SetWindowPos from winapi User32.dll
+## Requirements
++ Windows
++ Node 10.x or newer
 ## Installation
 ```
 npm i win-setwindowpos
