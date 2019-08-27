@@ -18,7 +18,7 @@ namespace setWindowPos
 
         void *arg0;
         size_t arg0Length;
-        napi_get_arraybuffer_info(env, argv[0], &arg0, &arg0Length);
+        napi_get_buffer_info(env, argv[0], &arg0, &arg0Length);
         if (status != napi_ok)
         {
             napi_throw_error(env, NULL, "argv[0] should be 64bit bigint");

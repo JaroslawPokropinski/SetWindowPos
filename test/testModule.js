@@ -7,7 +7,7 @@ var {
 } = require('../index');
 
 SetWindowPos(
-  0n,
+  new Buffer.from([0, 0, 0, 0, 0, 0, 0 ,0]),
   HWND_BOTTOM,
   0,
   0,
