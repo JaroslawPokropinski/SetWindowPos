@@ -7,10 +7,10 @@ if (process.platform == 'win32') {
   throw new Error('SetWindowPos requires windows os');
 }
 
-addon.HWND_BOTTOM = 1n;
-addon.HWND_NOTOPMOST = -2n;
-addon.HWND_TOP = 0n;
-addon.HWND_TOPMOST = -1n;
+addon.HWND_BOTTOM = 1;
+addon.HWND_NOTOPMOST = -2;
+addon.HWND_TOP = 0;
+addon.HWND_TOPMOST = -1;
 
 addon.SWP_NOSIZE = 0x0001;
 addon.SWP_NOMOVE = 0x0002;

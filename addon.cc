@@ -1,5 +1,4 @@
 #include <windows.h>
-#define NAPI_EXPERIMENTAL
 #include <node_api.h>
 #include <string>
 
@@ -17,23 +16,22 @@ namespace setWindowPos
             napi_throw_error(env, NULL, "Failed to parse arguments");
         }
 
-        bool loosless;
-
-        uint64_t arg0;
-        status = napi_get_value_bigint_uint64(env, argv[0], &arg0, &loosless);
-        if (status != napi_ok || !loosless)
+        void *arg0;
+        size_t arg0Length;
+        napi_get_arraybuffer_info(env, argv[0], &arg0, &arg0Length);
+        if (status != napi_ok)
         {
             napi_throw_error(env, NULL, "argv[0] should be 64bit bigint");
         }
-        HWND hwnd = (HWND) arg0;
+        HWND hwnd = *(HWND*)arg0;
 
-        uint64_t arg1;
-        status = napi_get_value_bigint_uint64(env, argv[1], &arg1, &loosless);
-        if (status != napi_ok || !loosless)
+        int32_t arg1;
+        status = napi_get_value_int32(env, argv[1], &arg1);
+        if (status != napi_ok)
         {
             napi_throw_error(env, NULL, "argv[1] should be 64bit bigint");
         }
-        HWND after = (HWND)arg1;
+        HWND after = (HWND)(uint64_t)arg1;
 
         int32_t intArgs[4];
         for (int i = 0; i < 4; i++)
