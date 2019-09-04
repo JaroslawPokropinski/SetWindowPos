@@ -26,8 +26,7 @@ function createConfigWindow() {
     // BrowserWindow parameters
   });
   // window setup
-  const nativeHandle = window.getNativeWindowHandle();
-  const hwnd = nativeHandle.readBigUInt64LE();
+  const hwnd = window.getNativeWindowHandle();
   SetWindowPos(
     hwnd,
     HWND_BOTTOM,
