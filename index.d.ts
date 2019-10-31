@@ -135,12 +135,8 @@ declare module 'win-setwindowpos' {
    * @see SWP_NOSIZE
    * @see SWP_NOZORDER
    * @see SWP_SHOWWINDOW
-   * @template THWNDRaw the type of the platform-native handle representation.
-   * This exists to allow the caller to specify a type of handle that will marshal correctly (like a Buffer, in the electron case) but still enforce typing semantics.
-   * @template THWND the type of this-module handle representation.
-   * This exists to support the case when THWNDRaw is used (or inferred) and is a non-number type, yet we still need to support the HWND literal (number) values.
    */
   // disable linter warning, if folks want to lint library typings
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export function SetWindowPos<THWNDRaw = any, THWND = THWNDRaw>(hWnd: THWNDRaw, hWndInsertAfter: THWND, x: number, y: number, cx: number, cy: number, uFlags: number): void
+  export function SetWindowPos(hWnd: Buffer, hWndInsertAfter: Buffer | number, x: number, y: number, cx: number, cy: number, uFlags: number): void
 }
