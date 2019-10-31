@@ -136,7 +136,5 @@ declare module 'win-setwindowpos' {
    * @see SWP_NOZORDER
    * @see SWP_SHOWWINDOW
    */
-  // disable linter warning, if folks want to lint library typings
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   export function SetWindowPos(hWnd: Buffer, hWndInsertAfter: Buffer | number, x: number, y: number, cx: number, cy: number, uFlags: number): void
 }
